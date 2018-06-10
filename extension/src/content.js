@@ -11,3 +11,9 @@ $.get(chrome.extension.getURL('/src/floatyBoi.html'), function(data) {
     // Or if you're using jQuery 1.8+:
     // $($.parseHTML(data)).appendTo('body');
 });
+
+async function main() {
+    let currentLink = await getCurrentLinkedData();
+}
+
+main();
