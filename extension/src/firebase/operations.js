@@ -14,7 +14,7 @@ firebase.initializeApp(config);
 let db = firebase.database();
 
 export function addSite(userID, email, project, site) {
-    db.ref(userID).update({
+    db.ref(userID + "/" + Date.now()).update({
         project: project,
         summary: site.summary,
         title: site.title,

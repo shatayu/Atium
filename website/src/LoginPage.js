@@ -1,10 +1,8 @@
-
 $( "#complete" ).click(function() {
   console.log("clicked");
   firebase.auth().signInWithEmailAndPassword(document.getElementById('email').value, document.getElementById('password').value)
     .then((response) => {
       if (response.hasOwnProperty("user")) {
-
         //alert("logged in");
          window.open("./Main.html", "_self");
       }
