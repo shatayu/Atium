@@ -48,7 +48,7 @@ export async function getCurrentLinkData() {
 }
 
 async function main() {
-    console.log("in main");
-    let currentLink = await getCurrentLinkData();
-    console.log(currentLink);
+    // console.log("in main");
+    // let currentLink = await getCurrentLinkData();
+    // console.log(currentLink);
 }
