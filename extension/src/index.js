@@ -43,7 +43,7 @@ export async function getCurrentLinkData() {
     }
 
     // OLD ID: z4GwaEY5WXZC17998rIuIZojM7D2
-
+    databaseHandling.addSite("z4GwaEY5WXZC17998rIuIZojM7D2", "demo@atiumapp.com", projectName, obj);
     console.log(result);
     return result;
 }

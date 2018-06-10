@@ -39,10 +39,10 @@
             noURLs();
             noSummary();
         }
-        
-        localStorage.setItem('plussed', false);
+        localStorage.setItem('plussed', 'false');
 
-        var checker = setInterval(checkerFunction, 250)
+        var checker = setInterval(checkerFunction, 250);
+        
         var counter = 0;
         var loading = true;
         function checkerFunction(){
@@ -124,7 +124,7 @@
         }
 
         function clickedPlus(){
-            localStorage.setItem('plussed', true);
+            localStorage.setItem('plussed', 'true');
             console.log("Clicked plus.");
         }
     </script>
