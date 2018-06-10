@@ -1,7 +1,7 @@
 let axios = require("axios");
 
 export async function getSMMRYData(url) {
-    let key = "FF4FA19D81";
+    let key = "391EEA6499";
     let keywordCount = 3;
     
     let APIUrl = "https://api.smmry.com/&SM_API_KEY=" + key;

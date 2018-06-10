@@ -30,7 +30,7 @@ h3{
   width: 55px;
   height: 55px;
   border-radius: 50%;
-  background: #db4437;
+  background: #444444;
   position: fixed;
   bottom: 30px;
   right: 30px;
@@ -116,7 +116,7 @@ h3{
 
 #container-floating:hover .edit{
   animation: edit-in 0.2s;
-    animation-delay: 0.1s;
+  animation-delay: 0.1s;
   animation-fill-mode: forwards;
 }
 
@@ -133,6 +133,11 @@ h3{
 @keyframes plus-in{
     from {opacity: 1; transform: rotateZ(0deg);}
     to {opacity: 1; transform: rotateZ(180deg);}
+}
+
+@keyframes plus-rotate{
+  from {opacity: 1; transform: rotateZ(0deg);}
+  to {opacity: 1; transform: rotateZ(360deg);}
 }
 
 @keyframes plus-out{

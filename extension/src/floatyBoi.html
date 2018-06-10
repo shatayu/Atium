@@ -1,6 +1,6 @@
 <html>
     <div id="container-floating">
-        <div class="nd3 nds" data-toggle="tooltip" data-placement="left" data-original-title="contract@gmail.com" onmouseover="hoverSummary()"><img class="reminder">
+        <div id="nd3 nds" class="nd3 nds" data-toggle="tooltip" data-placement="left" data-original-title="contract@gmail.com" onmouseover="hoverSummary()"><img class="reminder">
             <img class="reminder" src="https://docs.google.com/uc?id=1aGRGnuDNrDg6MDXCkaav3b2S25rZoz2C" />
             <div id="meme2" style="display: none">
                 <u1 class="list-group">
@@ -10,7 +10,7 @@
                 </u1>
             </div>
         </div>
-        <div class="nd1 nds" data-toggle="tooltip" data-placement="left" data-original-title="Edoardo@live.it" onmouseover="hoverURLs()"><img class="reminder">
+        <div id="nd1 nds" class="nd1 nds" data-toggle="tooltip" data-placement="left" data-original-title="Edoardo@live.it" onmouseover="hoverURLs()"><img class="reminder">
             <img class="reminder" src="https://docs.google.com/uc?id=1k9XqJ8T3mdse8lu5NR_zY2Z8zLu0RN0E" />
             
             <div id="meme" style="display: none">
@@ -25,7 +25,9 @@
         </div>
         
         <div id="floating-button" data-toggle="tooltip" data-placement="left" data-original-title="Create" onclick="clickedPlus()">
-            <p id="plusid" class="plus">+</p>
+            <p id="plusid" class="plus">
+                ·
+            </p>
         </div>
     </div>
 
@@ -37,23 +39,39 @@
             noSummary();
         }
 
-        var checker = setInterval(checkerFunction, 200)
+        var checker = setInterval(checkerFunction, 250)
+        var counter = 0;
+        var loading = true;
         function checkerFunction(){
             console.log("iterating");
-            if(document.getElementById("summarized").textContent === "Loading..."){
+            if(JSON.parse(localStorage.getItem('link')) == null || JSON.parse(localStorage.getItem('link')).summary.length < 1){
                 document.getElementById("floating-button").style.background = "#444444";
-                if(document.getElementById("plusid").textContent === "..."){
-                    document.getElementById("plusid").textContent = " ..";
-                } else if (document.getElementById("plusid").textContent === " .."){
-                    document.getElementById("plusid").textContent = ". .";
-                } else if (document.getElementById("plusid").textContent === ". ."){
-                    document.getElementById("plusid").textContent = ".. ";
-                } else if (document.getElementById("plusid").textContent === ".. "){
-                    document.getElementById("plusid").textContent = "..."
+                
+                document.getElementById("nd3 nds").style.display = "none";          
+                document.getElementById("nd1 nds").style.display = "none";          
+                
+
+                if(counter == 0){
+                    document.getElementById("plusid").textContent = ("·");
+                } else if (counter == 1){
+                    document.getElementById("plusid").textContent = ("··");
+                } else if (counter == 2){
+                    document.getElementById("plusid").textContent = ("···");
+                } else if (counter == 3){
+                    document.getElementById("plusid").textContent = ("··"); 
+                    counter = -1;                             
                 }
+                counter++;
+                
             } else {
+                document.getElementById("nd3 nds").style.display = "block";          
+                document.getElementById("nd1 nds").style.display = "block";     
+
+                console.log(JSON.parse(localStorage.getItem('link')).summary)
+                document.getElementById("plusid").textContent = "+";
                 document.getElementById("floating-button").style.background = "#db4437";
                 clearInterval(checker);
+                loading = false;
             }
         }
 
@@ -63,7 +81,7 @@
         }
 
         function noSummary(){
-            document.getElementById("meme2").style.display = "none";                
+            document.getElementById("meme2").style.display = "none";          
         }
 
         function hoverSummary(){
