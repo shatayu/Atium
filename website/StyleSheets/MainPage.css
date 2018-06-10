@@ -1,0 +1,26 @@
+.newProjectImage{
+	height:100px;
+	width:100px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+   	margin-top: auto;
+    margin-bottom: auto;
+}
+
+#NewProject:hover{
+	box-shadow: 0 1px 5px rgba(1,1,1,.3);
+}
+
+#NewProject{
+     position: relative;
+    float: left;
+    width: 140px;
+    height: 172px;
+    box-shadow: 0 1px 4px rgba(1,1,1,.15);
+    margin: 0 0 60px 40px;
+}
+
+.title{
+	text-align: center;
+}
