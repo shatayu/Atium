@@ -1,7 +1,7 @@
-var addCard = function (num){
+var addCard = function (num, project){
 
         var myCol = $('<div class="col-sm-3 col-md-3 pb-2"></div>');
-        var myPanel = $('<div class="card card-outline-info" id="'+1+'Panel"><div class="card-block"><div class="card-title"><span>Card #'+1+'</span><button type="button" class="close" data-target="#'+1+'Panel" data-dismiss="alert"><span class="float-right"><i class="fa fa-remove"></i></span></button></div><p>Some text in '+1+' </p><img src="//placehold.it/50/eeeeee" class="rounded rounded-circle"></div></div>');
+        var myPanel = $('<div class="row" id="contentPanel"><div class="col-sm-3 col-md-3 pb-2"><div class="card card-outline-info" id="'+1+'Panel"><div class="card-block"><a href="ProjectView.html"><button type="button"  id="btnGen" class = "btn"><span class="float-center"><i class="fa fa-remove"><h1>' + project + '</h1></i></span></button></a></div></div></div></div>');
         myPanel.appendTo(myCol);
         myCol.appendTo('#contentPanel');
     
@@ -16,4 +16,10 @@ var addCard = function (num){
 $('#btnGen').click(function(){
   console.log("work")
     
+});
+
+$( document ).ready(function() {
+
+    
+    //addCard($('#numPanels').val());
 });
