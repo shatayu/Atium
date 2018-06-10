@@ -3,10 +3,8 @@ let path = require("path");
 module.exports = {
     entry: {
         compiledLoginPage: "./src/LoginPage.js",
-        compiledSettings: "./src/Settings.js",
         compileProjectView: "./src/ProjectView.js",
         compileMainPage: "./src/MainPage.js",
-        compileCitationPage: "./src/CitationPage.js",
     },
 
     output: {
