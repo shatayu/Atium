@@ -94,7 +94,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\n//# sourceURL=webpack:///./src/ProjectView.js?");
+eval("\n\nvar data = { items: [{ title: \"ONE\", content: \"Something-1\" }, { title: \"TWO\", content: \"Something-2\" }, { title: \"THREE\", content: \"Something-3\" }]\n};\n\nvar success = function success(data) {\n  data.items.forEach(function (item, index) {\n    $('.latestinfo').append('<div class=\"panel panel-default\">' + '<div class=\"panel-heading\" role=\"tab\" id=\"heading_' + index + '\">' + '<h4 class=\"panel-title\">' + '<a role=\"button\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse_' + index + '\" aria-expanded=\"true\" aria-controls=\"collapse_' + index + '\">' + item.title + '</a>' + '</h4>' + '</div>' + '<div id=\"collapse_' + index + '\" class=\"panel-collapse collapse in\" role=\"tabpanel\" aria-labelledby=\"heading_' + index + '\">' + '<div class=\"panel-body\">' + item.content + '</div>' + '</div>' + '</div>');\n  });\n};\n\n// Feaking an ajax response...\nsuccess(data);\n\n//# sourceURL=webpack:///./src/ProjectView.js?");
 
 /***/ })
 
