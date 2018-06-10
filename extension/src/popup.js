@@ -1,4 +1,5 @@
 let firebase = require("firebase");
+let $ = require("jquery");
 
 var sidebarImage=document.getElementById("sidebarImage");
  sidebarImage.width=50;
@@ -44,9 +45,9 @@ function getDataAndProjects() {
             console.log(childSnapshot.val());
 
             data.push(childSnapshot.val());
-
+            console.log(data);
             for (let i = 0; i < data.length; i++) {
-                if (!projects.includes(data[i].project) && data[i].project.length > 0) {
+                if (!projects.includes(data[i].project) && data[i].hasOwnProperty("project") && data[i].project.length > 0) {
                     projects.push(data[i].project);
                 }
             }
@@ -64,6 +65,13 @@ function getDataAndProjects() {
             localStorage.setItem("project", $(this).text());
             success(data, $(this).text())
         });
+
+        $("#popupNewProject").click(function() {
+            let newProjectName = prompt("Please enter a project name:", "New Project");
+            localStorage.setItem("project", newProjectName);
+            $('#mySidenav').append('<a href="#" class="projectSidebar">'+newProjectName+'</a>')
+            success(data,newProjectName);
+        })
 
         // Feaking an ajax response...
         success(data, localStorage.getItem("project"));
@@ -110,9 +118,7 @@ var success = function(data, currentProject) {
     }
 }
 
-getDataAndProjects();
 
-let interval = setInterval(function() {
-    let projectName = localStorage.getItem("project");
-    success(data, project);
-}, 250)
+getDataAndProjects();
+let projectName = localStorage.getItem("project");
+success(data, projectName);
