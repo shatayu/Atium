@@ -15,6 +15,5 @@ var addCard = function (num){
 
 $('#btnGen').click(function(){
   console.log("work")
-    addCard($('#numPanels').val());
-    return false;
+    
 });
