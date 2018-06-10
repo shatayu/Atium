@@ -40,7 +40,7 @@ function checkForPlusFunction(){
         }
         let obj = JSON.parse(localStorage.getItem('link'));
         console.log(obj);
-        databaseHandling.addSite("wakanda-forever", "demo@atiumapp.com", projectName, obj);     
+        databaseHandling.addSite("z4GwaEY5WXZC17998rIuIZojM7D2", "demo@atiumapp.com", projectName, obj);     
         alert(obj.title + ' has been added under "' + projectName + '".');
     }
 }
