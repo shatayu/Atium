@@ -6,7 +6,33 @@
     <link rel="stylesheet" type="text/css" href="StyleSheets/Main.css">
     <link href="https://fonts.googleapis.com/css?family=Unica+One" rel="stylesheet">
   <body>
+  	<div class = "textArea">
+  		<textarea id = "email" placeholder = "Email"></textarea>
+	</div>
+	<div class = "textArea">
+ 	 	<textarea id = "password" placeholder ="Password"></textarea>
+	</div>
+	<div>
+		<button id="complete">Complete</button>
+	</div>
+	<div>
+		<button id="google">Google</button>
+	</div>
 
-  	<script type = "text/js" src="dist/compileLoginPage.js"></script>
+  	<script src="./dist/compiledLoginPage.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyADlbe5mZ62QFaLhPSwnC_ksGTGhBqTyjo",
+    authDomain: "atium-e4df2.firebaseapp.com",
+    databaseURL: "https://atium-e4df2.firebaseio.com",
+    projectId: "atium-e4df2",
+    storageBucket: "atium-e4df2.appspot.com",
+    messagingSenderId: "254101329920"
+  };
+  firebase.initializeApp(config);
+</script>
   </body>
 </html>

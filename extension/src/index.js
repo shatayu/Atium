@@ -1,10 +1,10 @@
-let axios = require("axios");
+let summary = require("./text/summary")
+let url = require("./chrome/url");
 
-async function test() {
-    let request = await axios.get("https://httpbin.org/get");
-    console.log(request);
-    return request;
+async function main() {
+    let currentTab = await url.getCurrentURL();
+    console.log(currentTab);
+    console.log(await summary.getSMMRYData(currentTab));
 }
 
-test();
-console.log("test");
+main();
