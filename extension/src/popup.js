@@ -37,7 +37,7 @@ var config = {
 let data = [];
 // production ID z4GwaEY5WXZC17998rIuIZojM7D2
 function getDataAndProjects() {
-    database.ref('wakanda-forever').once("value")
+    database.ref('z4GwaEY5WXZC17998rIuIZojM7D2').once("value")
     .then(function(snapshot) {
         var projects = [];
         
