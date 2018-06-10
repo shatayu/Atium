@@ -3,6 +3,7 @@ let path = require("path");
 module.exports = {
     entry: {
         main: './src/index.js',
+        content: "./src/content.js"
     },
 
     output: {
