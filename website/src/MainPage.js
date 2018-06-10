@@ -1,3 +1,32 @@
+var config = {
+    apiKey: "AIzaSyADlbe5mZ62QFaLhPSwnC_ksGTGhBqTyjo",
+    authDomain: "atium-e4df2.firebaseapp.com",
+    databaseURL: "https://atium-e4df2.firebaseio.com",
+    projectId: "atium-e4df2",
+    storageBucket: "atium-e4df2.appspot.com",
+    messagingSenderId: "254101329920"
+  };
+
+  firebase.initializeApp(config);
+
+   var database = firebase.database();
+
+  
+// database.ref('z4GwaEY5WXZC17998rIuIZojM7D2').once('value')
+//   .then(function(snapshot) {
+//         console.log(snapshot.val());
+//         var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
+//     });
+
+database.ref('z4GwaEY5WXZC17998rIuIZojM7D2').once("value")
+    .then(function(snapshot) {
+        snapshot.forEach(function(childSnapshot) {
+            console.log(childSnapshot.val());
+        }) 
+})
+
+
+
 var addCard = function (num, project){
 
         var myCol = $('<div class="col-sm-3 col-md-3 pb-2"></div>');

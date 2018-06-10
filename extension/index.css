@@ -126,7 +126,11 @@
   }
 
   .header{
-      font-size: 20px;
+      font-size: 30px;
+      text-align: center;
+      padding-top: 5px;
+
+      
   }
 
   .title{
@@ -136,7 +140,9 @@
     display: block;
 
   }
-
+#sidebarImage{
+    float: left;;
+}
   .panel-title{
     background-color: #fff;
     color: #444;

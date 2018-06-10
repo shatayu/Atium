@@ -1,4 +1,8 @@
+var sidebarImage=document.getElementById("sidebarImage");
+ sidebarImage.width=50;
+ sidebarImage.height=50;
 
+    
     /* Set the width of the side navigation to 250px */
     function openNav() {
        document.getElementById("mySidenav").style.width = "150px";
