@@ -22,10 +22,16 @@
 }
 
 .title{
-	text-align: center;
+    text-align: center;
+    font-size: 35px;
 }
 
 .btn{
     width: 100%;
     height: 100%;
+}
+
+h1{
+text-align: center;
+font-size: 35px;
 }
