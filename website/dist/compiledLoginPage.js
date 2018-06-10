@@ -94,7 +94,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\n//# sourceURL=webpack:///./src/LoginPage.js?");
+eval("\n\n$(\"#complete\").click(function () {\n  firebase.auth().signInWithEmailAndPassword(document.getElementById('email').value, document.getElementById('password').value).catch(function (error) {\n    // Handle Errors here.\n    var errorCode = error.code;\n    var errorMessage = error.message;\n    if (errorCode === 'auth/wrong-password') {\n      alert('Wrong password.');\n    } else {\n      alert(errorMessage);\n    }\n    console.log(error);\n  });\n});\n\n//# sourceURL=webpack:///./src/LoginPage.js?");
 
 /***/ })
 

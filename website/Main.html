@@ -6,19 +6,32 @@
     <link href="https://fonts.googleapis.com/css?family=Unica+One" rel="stylesheet">    
     <link rel="stylesheet" type="text/css" href="StyleSheets/Main.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-
-  <body>
-
-  	<h1 class = "title">Projects</h1>
-  	<div id = "main"> 
-  		<div id = "ProjectSpace">
-  			<div id="NewProject">
-  				<a><img class = "newProjectImage" src="Assets/download.png"></a>
-  			</div>
-  		</div>
-  	</div>
-
-
-  	<script type = "text/js" src="dist/compileMainPage.js"></script>
+    <body>
+		<div class="container">
+				<div class="card card-outline-info" >
+						<div class="card-block">
+							<h5 class="card-title">Projects</h5>
+							<p class="card-text"></p>
+						</div>
+					</div>
+			
+				<div class="row" id="contentPanel">
+		    <div class="col-sm-3 col-md-3 pb-2">
+        <div class="card card-outline-info" id="'+1+'Panel">
+          <div class="card-block">
+              <button type="button"  id="btnGen" class = "btn">
+                <span class="float-center">
+                  <i class="fa fa-remove">
+                  <img class = "newProjectImage" src="Assets/download.png">
+                  </i>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>  
+        </div>
+		
+				<script src="dist/compileMainPage.js"></script>
+		</div>
   </body>
 </html>
