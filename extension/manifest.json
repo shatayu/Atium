@@ -1,0 +1,19 @@
+{
+    "name": "Atium",
+    "version": "1.0.0",
+    "manifest_version": 2,
+    "offline_enabled": true,
+    
+    "permissions": [
+        "<all_urls>",
+        "background",
+        "cookies",
+        "identity",
+        "identity.email",
+        "storage",
+        "unlimitedStorage"
+    ],
+
+    "content_security_policy": "script-src 'self' 'unsafe-eval' https://www.gstatic.com/ https://*.firebaseio.com https://www.googleapis.com https://api.hubapi.com; object-src 'self' https://api.hubapi.com; https://www.*.google.com/* connect-src 'self' https://www.*.google.com/* wss://*.firebaseio.com https://api.hubapi.com;"
+
+}
