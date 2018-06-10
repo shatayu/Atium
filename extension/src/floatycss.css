@@ -1,5 +1,5 @@
 body{
-  font-family: "Unica One", cursive;
+  font-family: "Helvetica";
   text-align: center;
   background: #f1f1f1;
 }
@@ -51,7 +51,7 @@ h3{
   margin: 0;
   line-height: 55px;
   font-size: 38px;
-  font-family: "Unica One", cursive;
+  font-family: "Helvetica";
   font-weight: 300;
   animation: plus-out 0.3s;
   transition: all 0.3s;
@@ -61,7 +61,7 @@ h3{
   position: fixed;
   text-align: left;
   width: 1000px;
-  height: 70px;
+  height: 120px;
   bottom: 70px;
   right: 70px;
   z-index: 5000000; 
@@ -220,7 +220,7 @@ h3{
 
 .letter{
   font-size: 23px;
-  font-family: "Unica One", cursive;
+  font-family: "Helvetica";
   color: white;
   position: absolute;
   left: 0;
