@@ -5,21 +5,50 @@
     <link rel="stylesheet" type="text/css" href="StyleSheets/ProjectView.css">
     <link rel="stylesheet" type="text/css" href="StyleSheets/Main.css">
     <link href="https://fonts.googleapis.com/css?family=Unica+One" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+<style type="text/css">
+	.login-form {
+		width: 340px;
+    	margin: 50px auto;
+	}
+    .login-form form {
+    	margin-bottom: 15px;
+        background: #f7f7f7;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        padding: 30px;
+    }
+    .login-form h2 {
+        margin: 0 0 15px;
+    }
+    .form-control, .btn {
+        min-height: 38px;
+        border-radius: 2px;
+    }
+    .btn {        
+        font-size: 15px;
+        font-weight: bold;
+    }
+</style>
   <body>
-  	<div class = "textArea">
-  		<textarea id = "email" placeholder = "Email"></textarea>
-	</div>
-	<div class = "textArea">
- 	 	<textarea id = "password" placeholder ="Password"></textarea>
-	</div>
-	<div>
-		<button id="complete">Complete</button>
-	</div>
-	<div>
-		<button id="google">Google</button>
-	</div>
 
-  	<script src="./dist/compiledLoginPage.js"></script>
+<div class="login-form">
+
+        <h2 class="text-center">Log in</h2>       
+        <div class="form-group">
+            <input id = "email" type="text" class="form-control" placeholder="Email" required="required">
+        </div>
+        <div class="form-group">
+            <input id = "password" type="password" class="form-control" placeholder="Password" required="required">
+        </div>
+        <div class="form-group">
+            <button id="complete" type="submit" class="btn btn-primary btn-block">Log in</button>
+        </div>   
+
+</div>
+
+<script src="./dist/compiledLoginPage.js"></script>
 
 <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
 <script>
@@ -36,3 +65,4 @@
 </script>
   </body>
 </html>
+
