@@ -37,7 +37,7 @@ async function getCurrentLinkData() {
         links: currentTabLinks
     }
 
-    databaseHandling.addSite(Date.now(), "demo@atiumapp.com", "project", result);
+    databaseHandling.addSite("z4GwaEY5WXZC17998rIuIZojM7D2", "demo@atiumapp.com", "project", result);
 
     return result;
 }
