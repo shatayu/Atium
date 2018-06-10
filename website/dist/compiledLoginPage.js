@@ -94,7 +94,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\n$(\"#complete\").click(function () {\n  firebase.auth().signInWithEmailAndPassword(document.getElementById('email').value, document.getElementById('password').value).catch(function (error) {\n    // Handle Errors here.\n    var errorCode = error.code;\n    var errorMessage = error.message;\n    if (errorCode === 'auth/wrong-password') {\n      alert('Wrong password.');\n    } else {\n      alert(errorMessage);\n    }\n    console.log(error);\n  });\n});\n\n//# sourceURL=webpack:///./src/LoginPage.js?");
+eval("\n\n$(\"#complete\").click(function () {\n  console.log(\"clicked\");\n  firebase.auth().signInWithEmailAndPassword(document.getElementById('email').value, document.getElementById('password').value).then(function (response) {\n    if (response.hasOwnProperty(\"user\")) {\n\n      //alert(\"logged in\");\n      window.open(\"./Main.html\", \"_self\");\n    }\n  }).catch(function (error, user) {\n    // Handle Errors here.\n    var errorCode = error.code;\n    var errorMessage = error.message;\n\n    if (errorCode === 'auth/wrong-password') {\n      alert('Wrong password.');\n      console.log(error);\n    } else if (errorCode === 'auth/invalid-email') {\n      alert(errorMessage);\n      console.log(error);\n    }\n  });\n});\n\n//# sourceURL=webpack:///./src/LoginPage.js?");
 
 /***/ })
 
