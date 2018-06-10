@@ -1,0 +1,70 @@
+<html>
+    <div id="container-floating">
+        <div class="nd3 nds" data-toggle="tooltip" data-placement="left" data-original-title="contract@gmail.com" onmouseover="hoverSummary()"><img class="reminder">
+            <p class="letter">S</p>
+            <div id="meme2">
+                <u1 class="list-group">
+                    <li class="list-group-item">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet risus nullam eget felis eget nunc. Etiam sit amet nisl purus in. Quam viverra orci sagittis eu. Et tortor at risus viverra adipiscing. Id venenatis a condimentum vitae sapien. Volutpat diam ut venenatis tellus in metus vulputate eu scelerisque. Mattis nunc sed blandit libero volutpat. Vestibulum lectus mauris ultrices eros in cursus. Condimentum vitae sapien pellentesque habitant morbi tristique senectus et netus. Faucibus a pellentesque sit amet porttitor eget dolor morbi non. In aliquam sem fringilla ut morbi tincidunt augue interdum velit. Sit amet risus nullam eget felis eget nunc. Tincidunt dui ut ornare lectus sit amet est placerat. Bibendum neque egestas congue quisque egestas diam in arcu cursus.
+                    </li>
+                </u1>
+            </div>
+        </div>
+        <div class="nd1 nds" data-toggle="tooltip" data-placement="left" data-original-title="Edoardo@live.it" onmouseover="hoverURLs()"><img class="reminder">
+            <p class="letter">R</p>
+            
+            <div id="meme">
+                <ul class="list-group">
+                    <li class="list-group-item">Link1</li>
+                    <li class="list-group-item">Link2</li>
+                    <li class="list-group-item">Link3</li>
+                    <li class="list-group-item">Link4</li>
+                    <li class="list-group-item">Link5</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="floating-button" data-toggle="tooltip" data-placement="left" data-original-title="Create" onclick="clickedPlus()">
+            <p class="plus">+</p>
+            <img class="edit" src="https://ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/1x/bt_compose2_1x.png">
+        </div>
+    </div>
+
+    <script>
+        console.log("should have made the floaty boi");
+        
+        window.onload = function(){
+            noURLs();
+            noSummary();
+        }
+
+        function no_u(){
+            noURLs();
+            noSummary();
+        }
+
+        function noSummary(){
+            document.getElementById("meme2").style.display = "none";                
+        }
+
+        function hoverSummary(){
+            noURLs();
+            document.getElementById("meme2").style.display = "block";
+            console.log("run summary code here.");
+        }
+
+        function noURLs(){
+            document.getElementById("meme").style.display = "none";
+        }
+
+        function hoverURLs(){
+            noSummary();
+            document.getElementById("meme").style.display = "block";
+            console.log("run url code here.");
+        }
+
+        function clickedPlus(){
+            console.log("Clicked plus.");
+        }
+    </script>
+</html>
