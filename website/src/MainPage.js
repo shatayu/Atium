@@ -1,3 +1,4 @@
+var user = firebase.UserInfo.uid;
 var addCard = function (num, project){
 
         var myCol = $('<div class="col-sm-3 col-md-3 pb-2"></div>');
@@ -20,6 +21,6 @@ $('#btnGen').click(function(){
 
 $( document ).ready(function() {
 
-    
+
     //addCard($('#numPanels').val());
 });
