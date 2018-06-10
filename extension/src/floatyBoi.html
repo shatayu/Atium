@@ -5,7 +5,7 @@
             <div id="meme2" style="display: none">
                 <u1 class="list-group">
                     <li id="summarized" class="list-group-item">
-                        Loading...
+                        <b><div id="boldie"></div></b><div id="summary">Loading...</div>
                     </li>
                 </u1>
             </div>
@@ -15,6 +15,7 @@
             
             <div id="meme" style="display: none">
                 <ul class="list-group">
+                    <li class="list-group-item"><b>SIMILAR LINKS</b></li>
                     <li id="link1" class="list-group-item">Loading...</li>
                     <li id="link2" class="list-group-item">Loading...</li>
                     <li id="link3" class="list-group-item">Loading...</li>
@@ -38,8 +39,10 @@
             noURLs();
             noSummary();
         }
+        localStorage.setItem('plussed', 'false');
 
-        var checker = setInterval(checkerFunction, 250)
+        var checker = setInterval(checkerFunction, 250);
+        
         var counter = 0;
         var loading = true;
         function checkerFunction(){
@@ -69,7 +72,7 @@
 
                 console.log(JSON.parse(localStorage.getItem('link')).summary)
                 document.getElementById("plusid").textContent = "+";
-                document.getElementById("floating-button").style.background = "#db4437";
+                document.getElementById("floating-button").style.background = "#db4437"; // The red.
                 clearInterval(checker);
                 loading = false;
             }
@@ -87,7 +90,8 @@
         function hoverSummary(){
             noURLs();
             document.getElementById("meme2").style.display = "block";
-            document.getElementById("summarized").textContent = JSON.parse(localStorage.getItem('link')).summary;
+            document.getElementById("boldie").textContent = "SUMMARY: "
+            document.getElementById("summary").textContent = JSON.parse(localStorage.getItem('link')).summary;
         }
 
         function noURLs(){
@@ -120,6 +124,7 @@
         }
 
         function clickedPlus(){
+            localStorage.setItem('plussed', 'true');
             console.log("Clicked plus.");
         }
     </script>

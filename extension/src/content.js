@@ -1,4 +1,5 @@
-// let $ = require("jquery");
+let $ = require("jquery");
+let databaseHandling = require("./firebase/operations");
 
 // let index = require("./index.js");
 
@@ -22,3 +23,19 @@
 // }
 
 // main();
+/*
+var checkForPlus = setInterval(checkForPlusFunction, 500);
+
+function checkForPlusFunction(){
+    let check = localStorage.getItem('plussed');
+    console.log(typeof(check));
+
+    if(check === 'true'){
+        localStorage.setItem('plussed', 'false');
+        let projectName = "Meme Project"; //localStorage.getItem('project'); // NEED TO STORE PROJECT NAME TO LOCAL STORAGE UNDER 'PROJECT'
+        let obj = JSON.parse(localStorage.getItem('link'));
+        console.log(obj);
+        //databaseHandling.addSite("wakanda-forever", "demo@atiumapp.com", projectName, obj);     
+    }
+}
+*/
