@@ -8,9 +8,9 @@ var sidebarImage=document.getElementById("sidebarImage");
        document.getElementById("mySidenav").style.width = "150px";
     }
 
-    document.getElementById("open").addEventListener("click", openNav);
+    document.getElementById("atiumheader").addEventListener("click", openNav);
     document.getElementById("close").addEventListener("click", closeNav);
-    document.getElementById("container").addEventListener("click", closeNav);
+    //document.getElementById("container").addEventListener("click", closeNav);
 
     /* Set the width of the side navigation to 0 */
     function closeNav() {
@@ -27,6 +27,13 @@ var data = {
         }
     ]
 }
+
+var projects = [];
+data.items.forEach(function(item, index) {
+    if( !projects.includes(item.project)) {
+        projects.push(item.project);
+    }
+});
 
 
 
@@ -56,6 +63,12 @@ var success = function(data) {
       );
   });
 }
+
+projects.forEach(function(item, index) {
+    $('#mySidenav').append(
+        '<a href="#">'+projects[index]+'</a>'
+    )
+});
 
 // Feaking an ajax response...
 success(data);
