@@ -132,11 +132,11 @@ h3{
 
 @keyframes plus-in{
     from {opacity: 1; transform: rotateZ(0deg);}
-    to {opacity: 0; transform: rotateZ(180deg);}
+    to {opacity: 1; transform: rotateZ(180deg);}
 }
 
 @keyframes plus-out{
-    from {opacity: 0; transform: rotateZ(180deg);}
+    from {opacity: 1; transform: rotateZ(180deg);}
     to {opacity: 1; transform: rotateZ(0deg);}
 }
 
