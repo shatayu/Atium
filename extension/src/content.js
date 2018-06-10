@@ -1,5 +1,7 @@
 let $ = require("jquery");
 
+let index = require("./index.js");
+
 console.log('hello');
 
 $($.parseHTML(
@@ -13,7 +15,8 @@ $.get(chrome.extension.getURL('/src/floatyBoi.html'), function(data) {
 });
 
 async function main() {
-    let currentLink = await getCurrentLinkedData();
+    let currentLink = await index.getCurrentLinkData();
+    localStorage.setItem('link', currentLink);
 }
 
 main();

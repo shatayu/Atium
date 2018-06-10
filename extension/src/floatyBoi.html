@@ -15,11 +15,11 @@
             
             <div id="meme" style="display: none">
                 <ul class="list-group">
-                    <li class="list-group-item">Link1</li>
-                    <li class="list-group-item">Link2</li>
-                    <li class="list-group-item">Link3</li>
-                    <li class="list-group-item">Link4</li>
-                    <li class="list-group-item">Link5</li>
+                    <li id="link1" class="list-group-item">Link1</li>
+                    <li id="link2" class="list-group-item">Link2</li>
+                    <li id="link3" class="list-group-item">Link3</li>
+                    <li id="link4" class="list-group-item">Link4</li>
+                    <li id="link5" class="list-group-item">Link5</li>
                 </ul>
             </div>
         </div>
@@ -59,6 +59,7 @@
         function hoverURLs(){
             noSummary();
             document.getElementById("meme").style.display = "block";
+            document.getElementById("link1").textContent = localStorage.getItem('link').links[0].name;
             console.log("run url code here.");
         }
 

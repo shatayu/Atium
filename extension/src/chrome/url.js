@@ -1,7 +1,10 @@
 let thenChrome = require("then-chrome");
 
 export async function getCurrentURL() {
-    let query = await thenChrome.tabs.query({active: true, currentWindow: true});
+
+    let result = thenChrome.tabs.query({active: true, currentWindow: true});
+    console.log(result);
+    let query = await result;
     return query[0].url;
     // , function(tabs) {
 
