@@ -112,3 +112,7 @@ var success = function(data, currentProject) {
 
 getDataAndProjects();
 
+let interval = setInterval(function() {
+    let projectName = localStorage.getItem("project");
+    success(data, project);
+}, 250)
