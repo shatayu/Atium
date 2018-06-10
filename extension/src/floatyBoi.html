@@ -4,8 +4,8 @@
             <img class="reminder" src="https://docs.google.com/uc?id=1aGRGnuDNrDg6MDXCkaav3b2S25rZoz2C" />
             <div id="meme2" style="display: none">
                 <u1 class="list-group">
-                    <li class="list-group-item">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet risus nullam eget felis eget nunc. Etiam sit amet nisl purus in. Quam viverra orci sagittis eu. Et tortor at risus viverra adipiscing. Id venenatis a condimentum vitae sapien. Volutpat diam ut venenatis tellus in metus vulputate eu scelerisque. Mattis nunc sed blandit libero volutpat. Vestibulum lectus mauris ultrices eros in cursus. Condimentum vitae sapien pellentesque habitant morbi tristique senectus et netus. Faucibus a pellentesque sit amet porttitor eget dolor morbi non. In aliquam sem fringilla ut morbi tincidunt augue interdum velit. Sit amet risus nullam eget felis eget nunc. Tincidunt dui ut ornare lectus sit amet est placerat. Bibendum neque egestas congue quisque egestas diam in arcu cursus.
+                    <li id="summarized" class="list-group-item">
+                        Loading...
                     </li>
                 </u1>
             </div>
@@ -15,17 +15,17 @@
             
             <div id="meme" style="display: none">
                 <ul class="list-group">
-                    <li id="link1" class="list-group-item">Link1</li>
-                    <li id="link2" class="list-group-item">Link2</li>
-                    <li id="link3" class="list-group-item">Link3</li>
-                    <li id="link4" class="list-group-item">Link4</li>
-                    <li id="link5" class="list-group-item">Link5</li>
+                    <li id="link1" class="list-group-item">Loading...</li>
+                    <li id="link2" class="list-group-item">Loading...</li>
+                    <li id="link3" class="list-group-item">Loading...</li>
+                    <li id="link4" class="list-group-item">Loading...</li>
+                    <li id="link5" class="list-group-item">Loading...</li>
                 </ul>
             </div>
         </div>
         
         <div id="floating-button" data-toggle="tooltip" data-placement="left" data-original-title="Create" onclick="clickedPlus()">
-            <p class="plus">+</p>
+            <p id="plusid" class="plus">+</p>
         </div>
     </div>
 
@@ -35,6 +35,26 @@
         window.onload = function(){
             noURLs();
             noSummary();
+        }
+
+        var checker = setInterval(checkerFunction, 200)
+        function checkerFunction(){
+            console.log("iterating");
+            if(document.getElementById("summarized").textContent === "Loading..."){
+                document.getElementById("floating-button").style.background = "#444444";
+                if(document.getElementById("plusid").textContent === "..."){
+                    document.getElementById("plusid").textContent = " ..";
+                } else if (document.getElementById("plusid").textContent === " .."){
+                    document.getElementById("plusid").textContent = ". .";
+                } else if (document.getElementById("plusid").textContent === ". ."){
+                    document.getElementById("plusid").textContent = ".. ";
+                } else if (document.getElementById("plusid").textContent === ".. "){
+                    document.getElementById("plusid").textContent = "..."
+                }
+            } else {
+                document.getElementById("floating-button").style.background = "#db4437";
+                clearInterval(checker);
+            }
         }
 
         function no_u(){
@@ -49,7 +69,7 @@
         function hoverSummary(){
             noURLs();
             document.getElementById("meme2").style.display = "block";
-            console.log("run summary code here.");
+            document.getElementById("summarized").textContent = JSON.parse(localStorage.getItem('link')).summary;
         }
 
         function noURLs(){
@@ -59,8 +79,26 @@
         function hoverURLs(){
             noSummary();
             document.getElementById("meme").style.display = "block";
-            document.getElementById("link1").textContent = localStorage.getItem('link').links[0].name;
-            console.log("run url code here.");
+            document.getElementById("link1").textContent = JSON.parse(localStorage.getItem('link')).links[0].name;
+            document.getElementById("link1").onclick = function(){
+                window.open(JSON.parse(localStorage.getItem('link')).links[0].url);
+            }
+            document.getElementById("link2").textContent = JSON.parse(localStorage.getItem('link')).links[1].name;
+            document.getElementById("link2").onclick = function(){
+                window.open(JSON.parse(localStorage.getItem('link')).links[1].url);
+            }
+            document.getElementById("link3").textContent = JSON.parse(localStorage.getItem('link')).links[2].name;
+            document.getElementById("link3").onclick = function(){
+                window.open(JSON.parse(localStorage.getItem('link')).links[2].url);
+            }
+            document.getElementById("link4").textContent = JSON.parse(localStorage.getItem('link')).links[3].name;
+            document.getElementById("link4").onclick = function(){
+                window.open(JSON.parse(localStorage.getItem('link')).links[3].url);
+            }
+            document.getElementById("link5").textContent = JSON.parse(localStorage.getItem('link')).links[4].name;
+            document.getElementById("link5").onclick = function(){
+                window.open(JSON.parse(localStorage.getItem('link')).links[4].url);
+            }
         }
 
         function clickedPlus(){

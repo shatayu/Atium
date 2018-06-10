@@ -43,7 +43,7 @@ export async function getCurrentLinkData() {
     }
 
     databaseHandling.addSite("z4GwaEY5WXZC17998rIuIZojM7D2", "demo@atiumapp.com", "project", result);
-
+    console.log(result);
     return result;
 }
 

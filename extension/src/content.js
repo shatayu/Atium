@@ -15,8 +15,10 @@ $.get(chrome.extension.getURL('/src/floatyBoi.html'), function(data) {
 });
 
 async function main() {
+    localStorage.removeItem('link');
     let currentLink = await index.getCurrentLinkData();
-    localStorage.setItem('link', currentLink);
+    localStorage.setItem('link', JSON.stringify(currentLink));
+    console.log("meme");
 }
 
 main();
