@@ -5,8 +5,8 @@ let links = require("./text/links");
 async function main() {
     let currentTab = await url.getCurrentURL();
     // console.log(currentTab);
-    // console.log(await summary.getSMMRYData(currentTab));
-    console.log(await links.getRelatedLinks("memes"));
+    console.log(await summary.getSMMRYData(currentTab));
+    //console.log(await links.getRelatedLinks("memes"));
 }
 
 main();
